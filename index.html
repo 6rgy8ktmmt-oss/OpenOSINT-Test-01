@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OpenOSINT</title>
+
+<style>
+body {
+    background: #111;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, Arial;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    background: #007aff;
+    color: white;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 12px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🔎 OpenOSINT</h1>
+
+<div class="card">
+
+<select id="type">
+    <option>Username</option>
+    <option>Domain</option>
+    <option>IP</option>
+</select>
+
+<input id="query" placeholder="Введите запрос">
+
+<button onclick="search()">
+Проверить
+</button>
+
+<div id="result">
+Готово к работе
+</div>
+
+</div>
+
+
+<script>
+
+function search(){
+
+let type =
+document.getElementById("type").value;
+
+let query =
+document.getElementById("query").value;
+
+
+document.getElementById("result").innerHTML =
+`
+<b>Тип:</b> ${type}<br>
+<b>Запрос:</b> ${query}<br><br>
+
+Модули анализа будут подключены следующим этапом.
+`;
+
+}
+
+</script>
+
+
+</body>
+</html>
